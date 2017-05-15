@@ -4,13 +4,6 @@
  * @flow
  */
 
-// import React, { Component } from 'react';
-// import {
-//   AppRegistry,
-//   StyleSheet,
-//   Text,
-//   View
-// } from 'react-native';
 
 import React, { Component } from 'react';
 import Featured from './components/featured';
@@ -32,7 +25,9 @@ class VidSearch extends Component {
 
     render() {
         return (
-            <TabBarIOS selectedTab={this.state.selectedTab}>
+            <TabBarIOS selectedTab={this.state.selectedTab}
+            translucent={false}
+            >
                 <TabBarIOS.Item
                     selected={this.state.selectedTab === 'featured'}
                     systemIcon='featured'

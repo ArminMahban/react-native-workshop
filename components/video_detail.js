@@ -13,7 +13,6 @@ import {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 75,
     alignItems: 'center',
   },
   image: {

@@ -1,13 +1,14 @@
 'use strict';
 
 import React, { Component } from 'react';
-import SearchVideos from './search_videos';
+import SearchView from './searchView';
 
 import {
     StyleSheet,
     View,
     NavigatorIOS,
     Text,
+    Image,
   } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -16,18 +17,18 @@ const styles = StyleSheet.create({
   },
 });
 
-class Search extends Component {
-  render() {
-    return (
-      <NavigatorIOS
-        style={styles.container}
-        initialRoute={{
-          title: 'Search Videos',
-          component: SearchVideos,
-        }}
-      />
-    );
-  }
-}
+const Search = (props) => {
+
+  return (
+    <NavigatorIOS
+      style={styles.container}
+      initialRoute={{
+        title: 'Search Videos',
+        component: SearchView,
+      }}
+    />
+  );
+};
+
 
 module.exports = Search;

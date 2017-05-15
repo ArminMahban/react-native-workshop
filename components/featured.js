@@ -21,6 +21,7 @@ class Featured extends Component {
     return (
       <NavigatorIOS
         style={styles.container}
+        translucent={false}
         initialRoute={{
           title: 'Featured Videos',
           component: VideoList,

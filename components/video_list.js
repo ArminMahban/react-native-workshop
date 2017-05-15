@@ -47,8 +47,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#dddddd',
   },
   listView: {
-    marginBottom: 80,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'yellow',
   },
 });
 
@@ -122,19 +121,19 @@ class VideoList extends Component {
       return this.renderLoadingView();
     }
     return (
-      <View style={{marginTop: 65}}>
-      <Search
-        onChangeText={(query) => {
-          this.setState({ query });
-          this.fetchData();
+      <View style={{marginBottom: 150}}>
+        <Search
+          onChangeText={(query) => {
+            this.setState({ query });
+            this.fetchData();
+            }
           }
-        }
-      />
-          <ListView
-              dataSource={this.state.dataSource}
-              renderRow={this.renderVideo.bind(this)}
-              style={styles.listView}
-          />
+        />
+        <ListView
+            dataSource={this.state.dataSource}
+            renderRow={this.renderVideo.bind(this)}
+            style={styles.listView}
+        />
       </View>
     );
   }
