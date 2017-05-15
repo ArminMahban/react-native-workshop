@@ -21,47 +21,36 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
     backgroundColor: '#F5FCFF',
     padding: 10,
   },
   thumbnail: {
-    width: 53,
-    height: 81,
+    width: 80,
+    height: 80,
     marginRight: 10,
   },
   rightContainer: {
     flex: 1,
   },
   title: {
-    fontSize: 20,
-    marginBottom: 8,
+    fontSize: 16,
+    fontWeight: "bold",
+    marginBottom: 3,
   },
-  author: {
-    color: '#656565',
+  subtitle: {
+    fontSize: 12,
   },
   separator: {
     height: 1,
     backgroundColor: '#dddddd',
   },
   listView: {
+    marginBottom: 80,
     backgroundColor: '#F5FCFF',
   },
-  loading: {
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  searchBar: {
-    paddingTop: 165,
-    backgroundColor: 'green',
-  }
 });
-
-const FAKE_BOOK_DATA = [
-    { volumeInfo: { title: 'The Catcher in the Rye', authors: 'J. D. Salinger', imageLinks: { thumbnail: 'https://facebook.github.io/react/img/logo_og.png' } } },
-];
-
 
 class VideoList extends Component {
 
@@ -81,7 +70,6 @@ class VideoList extends Component {
   }
 
    fetchData() {
-     console.log("about to search");
        youtubeSearch(this.state.query)
        .then((responseData) => {
          this.setState({
@@ -120,6 +108,7 @@ class VideoList extends Component {
                             style={styles.thumbnail} />
                         <View style={styles.rightContainer}>
                             <Text style={styles.title}>{video.snippet.title}</Text>
+                            <Text style={styles.subtitle}>{video.snippet.description}</Text>
                         </View>
                     </View>
                     <View style={styles.separator} />
