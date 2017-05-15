@@ -10,23 +10,24 @@ import {
     Text,
   } from 'react-native';
 
-  var styles = StyleSheet.create({
-      container: {
-          flex: 1
-      }
-  });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
-  class Featured extends Component {
-      render() {
-          return (
-              <NavigatorIOS
-                  style={styles.container}
-                  initialRoute={{
-              title: 'Featured Books',
-              component: VideoList
-              }}/>
-          );
-      }
+class Featured extends Component {
+  render() {
+    return (
+      <NavigatorIOS
+        style={styles.container}
+        initialRoute={{
+          title: 'Featured Videos',
+          component: VideoList,
+        }}
+      />
+    );
+  }
   }
 
 
