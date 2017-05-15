@@ -8,6 +8,7 @@ import {
     Text,
     View,
     Image,
+    WebView,
   } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -29,27 +30,19 @@ const styles = StyleSheet.create({
 
 class VideoDetail extends Component {
   render() {
-    const book = this.props.book;
-    const description = (typeof book.volumeInfo.description !== 'undefined') ? book.volumeInfo.description : '';
+    console.log("video");
+    console.log(this.props.video);
+    const video = this.props.video;
+    const description = video.snippet.description || '';
+    const vidId = video.id.videoId;
     return (
-      <View style={styles.container}>
-        <YouTube
-          ref="youtubePlayer"
-          videoId="KVZ-P-ZI6W4" // The YouTube video ID
-          play           // control playback of video with true/false
-          hidden={false}        // control visibility of the entire view
-          fullscreen    // control whether the video should play inline
-          loop={false}          // control whether the video should loop when ended
-
-          onReady={(e) => { this.setState({ isReady: true }); }}
-          onChangeState={(e) => { this.setState({ status: e.state }); }}
-          onChangeQuality={(e) => { this.setState({ quality: e.quality }); }}
-          onError={(e) => { this.setState({ error: e.error }); }}
-          onProgress={(e) => { this.setState({ currentTime: e.currentTime, duration: e.duration }); }}
-
-          style={{ alignSelf: 'stretch', height: 300, backgroundColor: 'black', marginVertical: 10 }}
-        />
-      </View>
+      <WebView
+                    style={styles.frame}
+                    source={{uri: `https://www.youtube.com/watch?v=${vidId}`}}
+                    renderLoading={this.renderLoading}
+                    renderError={this.renderError}
+                    automaticallyAdjustContentInsets={false}
+                />
     );
   }
 }

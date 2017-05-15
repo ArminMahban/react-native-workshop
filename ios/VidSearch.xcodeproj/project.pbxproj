@@ -35,13 +35,10 @@
 		2DCD954D1E0B4F2C00145EB5 /* VidSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* VidSearchTests.m */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-<<<<<<< HEAD
 		182EB126DC3D4B63B18A2A29 /* libRCTYouTube.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B088FD62CD3485F83F53D13 /* libRCTYouTube.a */; };
 		E6BD4A71190F4F4CBC0B9299 /* libRNSearchBar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25425240973341F5B1CE43A9 /* libRNSearchBar.a */; };
-=======
 		8177F85B13A341058E59A101 /* libRCTYouTube.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 509008824EFD40FE8A3419FE /* libRCTYouTube.a */; };
 		D94E70D0BDA64684A6F84092 /* YTPlayerView-iframe-player.html in Resources */ = {isa = PBXBuildFile; fileRef = 5423B7E9B7A94EA38E650D3A /* YTPlayerView-iframe-player.html */; };
->>>>>>> 32ecef2fad99e58a9337e96f09c22f5213cd5677
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,16 +258,13 @@
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		F9A78A5ED62941B698443139 /* RCTYouTube.xcodeproj */ = {isa = PBXFileReference; name = "RCTYouTube.xcodeproj"; path = "../node_modules/react-native-youtube/RCTYouTube.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		2B088FD62CD3485F83F53D13 /* libRCTYouTube.a */ = {isa = PBXFileReference; name = "libRCTYouTube.a"; path = "libRCTYouTube.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		7783F8AAC8044D56AD64F521 /* RNSearchBar.xcodeproj */ = {isa = PBXFileReference; name = "RNSearchBar.xcodeproj"; path = "../node_modules/react-native-search-bar/RNSearchBar.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		25425240973341F5B1CE43A9 /* libRNSearchBar.a */ = {isa = PBXFileReference; name = "libRNSearchBar.a"; path = "libRNSearchBar.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-=======
 		019E6A880C4F4494A86FEB30 /* RCTYouTube.xcodeproj */ = {isa = PBXFileReference; name = "RCTYouTube.xcodeproj"; path = "../node_modules/react-native-youtube/RCTYouTube.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		509008824EFD40FE8A3419FE /* libRCTYouTube.a */ = {isa = PBXFileReference; name = "libRCTYouTube.a"; path = "libRCTYouTube.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		5423B7E9B7A94EA38E650D3A /* YTPlayerView-iframe-player.html */ = {isa = PBXFileReference; name = "YTPlayerView-iframe-player.html"; path = "../node_modules/react-native-youtube/assets/YTPlayerView-iframe-player.html"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
->>>>>>> 32ecef2fad99e58a9337e96f09c22f5213cd5677
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,12 +291,9 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-<<<<<<< HEAD
 				182EB126DC3D4B63B18A2A29 /* libRCTYouTube.a in Frameworks */,
 				E6BD4A71190F4F4CBC0B9299 /* libRNSearchBar.a in Frameworks */,
-=======
 				8177F85B13A341058E59A101 /* libRCTYouTube.a in Frameworks */,
->>>>>>> 32ecef2fad99e58a9337e96f09c22f5213cd5677
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,12 +460,9 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-<<<<<<< HEAD
 				F9A78A5ED62941B698443139 /* RCTYouTube.xcodeproj */,
 				7783F8AAC8044D56AD64F521 /* RNSearchBar.xcodeproj */,
-=======
 				019E6A880C4F4494A86FEB30 /* RCTYouTube.xcodeproj */,
->>>>>>> 32ecef2fad99e58a9337e96f09c22f5213cd5677
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -495,11 +483,8 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* VidSearchTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
-<<<<<<< HEAD
 				3EBABA1DAFCA49208EF04F5F /* Resources */,
-=======
 				15577A50FE2F42A28EA35340 /* Resources */,
->>>>>>> 32ecef2fad99e58a9337e96f09c22f5213cd5677
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -516,7 +501,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		3EBABA1DAFCA49208EF04F5F /* Resources */ = {
 			isa = "PBXGroup";
 			children = (
@@ -524,7 +508,6 @@
 			name = Resources;
 			sourceTree = "<group>";
 			path = "";
-=======
 		15577A50FE2F42A28EA35340 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,7 +516,6 @@
 			name = Resources;
 			path = "";
 			sourceTree = "<group>";
->>>>>>> 32ecef2fad99e58a9337e96f09c22f5213cd5677
 		};
 /* End PBXGroup section */
 
@@ -1028,15 +1010,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-youtube/**",
 					"$(SRCROOT)/../node_modules/react-native-search-bar",
-=======
->>>>>>> 32ecef2fad99e58a9337e96f09c22f5213cd5677
 				);
 			};
 			name = Debug;
@@ -1058,15 +1037,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-youtube/**",
 					"$(SRCROOT)/../node_modules/react-native-search-bar",
-=======
->>>>>>> 32ecef2fad99e58a9337e96f09c22f5213cd5677
 				);
 			};
 			name = Release;
@@ -1142,15 +1118,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-youtube/**",
 					"$(SRCROOT)/../node_modules/react-native-search-bar",
-=======
->>>>>>> 32ecef2fad99e58a9337e96f09c22f5213cd5677
 				);
 			};
 			name = Debug;
@@ -1181,15 +1154,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-youtube/**",
 					"$(SRCROOT)/../node_modules/react-native-search-bar",
-=======
->>>>>>> 32ecef2fad99e58a9337e96f09c22f5213cd5677
 				);
 			};
 			name = Release;
@@ -1215,10 +1185,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-=======
->>>>>>> 32ecef2fad99e58a9337e96f09c22f5213cd5677
 				);
 			};
 			name = Debug;
@@ -1244,10 +1211,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-<<<<<<< HEAD
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-=======
->>>>>>> 32ecef2fad99e58a9337e96f09c22f5213cd5677
 				);
 			};
 			name = Release;

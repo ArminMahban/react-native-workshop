@@ -1,11 +1,10 @@
 'use strict';
 
 import React, { Component } from 'react';
-<<<<<<< HEAD
-import { StyleSheet, View, Image, Text, ListView, TouchableHighlight, ActivityIndicatorIOS } from 'react-native';
-=======
-import { youtubeSearch } from '../youtube-api'
+import youtubeSearch from '../youtube-api'
 import axios from 'axios'
+import Search from 'react-native-search-bar';
+
 import {
     StyleSheet,
     View,
@@ -15,7 +14,6 @@ import {
     TouchableHighlight,
     ActivityIndicatorIOS
   } from 'react-native';
->>>>>>> 32ecef2fad99e58a9337e96f09c22f5213cd5677
 
 import VideoDetail from './video_detail';
 
@@ -57,12 +55,9 @@ const styles = StyleSheet.create({
   },
 });
 
-<<<<<<< HEAD
 const FAKE_BOOK_DATA = [
     { volumeInfo: { title: 'The Catcher in the Rye', authors: 'J. D. Salinger', imageLinks: { thumbnail: 'https://facebook.github.io/react/img/logo_og.png' } } },
 ];
-=======
->>>>>>> 32ecef2fad99e58a9337e96f09c22f5213cd5677
 
 
 class VideoList extends Component {
@@ -78,68 +73,22 @@ class VideoList extends Component {
   }
 
   componentDidMount() {
+    console.log("here");
     this.fetchData();
   }
 
-<<<<<<< HEAD
-  fetchData() {
-    fetch(REQUEST_URL)
-       .then(response => response.json())
-=======
    fetchData() {
+     console.log("about to search");
        youtubeSearch("dog")
->>>>>>> 32ecef2fad99e58a9337e96f09c22f5213cd5677
        .then((responseData) => {
          this.setState({
-           dataSource: this.state.dataSource.cloneWithRows(responseData.items),
+           dataSource: this.state.dataSource.cloneWithRows(responseData),
            isLoading: false,
          });
        })
        .done();
   }
 
-<<<<<<< HEAD
-  showVideoDetail(book) {
-    this.props.navigator.push({
-      title: book.volumeInfo.title,
-      component: VideoDetail,
-      passProps: { book },
-    });
-  }
-
-  renderLoadingView() {
-    return (
-      <View style={styles.loading}>
-        <Text>
-          Loading books...
-        </Text>
-      </View>
-    );
-  }
-
-  renderBook(book) {
-    return (
-      <TouchableHighlight onPress={() => this.showVideoDetail(book)} underlayColor="#dddddd">
-        <View>
-          <View style={styles.container}>
-            <Image
-              source={{ uri: book.volumeInfo.imageLinks.thumbnail }}
-              style={styles.thumbnail}
-            />
-            <View style={styles.rightContainer}>
-              <Text style={styles.title}>{book.volumeInfo.title}</Text>
-              <Text style={styles.author}>{book.volumeInfo.authors}</Text>
-            </View>
-          </View>
-          <View style={styles.separator} />
-        </View>
-      </TouchableHighlight>
-    );
-  }
-
-  render() {
-    const book = FAKE_BOOK_DATA[0];
-=======
    renderLoadingView() {
        return (
            <View style={styles.loading}>
@@ -159,8 +108,10 @@ class VideoList extends Component {
    }
 
    renderVideo(video) {
+     console.log("video is");
+     console.log(video);
        return (
-            <TouchableHighlight onPress={() => this.showVideoDetail(video)}  underlayColor='#dddddd'>
+            <TouchableHighlight onPress={() => {this.showVideoDetail(video) }}  underlayColor='#dddddd'>
                 <View>
                     <View style={styles.container}>
                         <Image
@@ -177,24 +128,21 @@ class VideoList extends Component {
    }
 
   render() {
->>>>>>> 32ecef2fad99e58a9337e96f09c22f5213cd5677
     if (this.state.isLoading) {
       return this.renderLoadingView();
     }
     return (
-<<<<<<< HEAD
-      <ListView
-        dataSource={this.state.dataSource}
-        renderRow={this.renderBook.bind(this)}
-        style={styles.listView}
-      />
-=======
-        <ListView
-            dataSource={this.state.dataSource}
-            renderRow={this.renderVideo.bind(this)}
-            style={styles.listView}
-            />
->>>>>>> 32ecef2fad99e58a9337e96f09c22f5213cd5677
+      <View>
+          <Search
+            ref='searchBar'
+          	placeholder='Search'
+          />
+          <ListView
+              dataSource={this.state.dataSource}
+              renderRow={this.renderVideo.bind(this)}
+              style={styles.listView}
+          />
+      </View>
     );
   }
 }
