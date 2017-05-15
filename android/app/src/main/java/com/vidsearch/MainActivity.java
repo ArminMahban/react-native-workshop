@@ -1,6 +1,7 @@
 package com.vidsearch;
 
 import com.facebook.react.ReactActivity;
+import com.inprogress.reactnativeyoutube.ReactNativeYouTube;
 
 public class MainActivity extends ReactActivity {
 

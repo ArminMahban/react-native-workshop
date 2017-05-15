@@ -7,6 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
+<<<<<<< HEAD
     "react": "^16.0.0-alpha.6",
     "react-native": "0.44.0",
     "react-native-search-bar": "^3.0.0",
@@ -21,6 +22,15 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^5.0.1",
     "eslint-plugin-react": "^7.0.1",
+=======
+    "react": "16.0.0-alpha.6",
+    "react-native": "0.44.0",
+    "react-native-youtube": "^1.0.0-alpha.3"
+  },
+  "devDependencies": {
+    "babel-jest": "20.0.1",
+    "babel-preset-react-native": "1.9.2",
+>>>>>>> 32ecef2fad99e58a9337e96f09c22f5213cd5677
     "jest": "20.0.1",
     "react-test-renderer": "16.0.0-alpha.6"
   },

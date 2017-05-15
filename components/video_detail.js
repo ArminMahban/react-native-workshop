@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
+import YouTube from 'react-native-youtube';
 
 import {
     StyleSheet,
@@ -29,12 +30,25 @@ const styles = StyleSheet.create({
 class VideoDetail extends Component {
   render() {
     const book = this.props.book;
-    const imageURI = (typeof book.volumeInfo.imageLinks !== 'undefined') ? book.volumeInfo.imageLinks.thumbnail : '';
     const description = (typeof book.volumeInfo.description !== 'undefined') ? book.volumeInfo.description : '';
     return (
       <View style={styles.container}>
-        <Image style={styles.image} source={{ uri: imageURI }} />
-        <Text style={styles.description}>{description}</Text>
+        <YouTube
+          ref="youtubePlayer"
+          videoId="KVZ-P-ZI6W4" // The YouTube video ID
+          play           // control playback of video with true/false
+          hidden={false}        // control visibility of the entire view
+          fullscreen    // control whether the video should play inline
+          loop={false}          // control whether the video should loop when ended
+
+          onReady={(e) => { this.setState({ isReady: true }); }}
+          onChangeState={(e) => { this.setState({ status: e.state }); }}
+          onChangeQuality={(e) => { this.setState({ quality: e.quality }); }}
+          onError={(e) => { this.setState({ error: e.error }); }}
+          onProgress={(e) => { this.setState({ currentTime: e.currentTime, duration: e.duration }); }}
+
+          style={{ alignSelf: 'stretch', height: 300, backgroundColor: 'black', marginVertical: 10 }}
+        />
       </View>
     );
   }
