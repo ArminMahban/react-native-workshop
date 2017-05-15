@@ -1,7 +1,8 @@
 'use strict';
 
 import React, { Component } from 'react';
-
+import { youtubeSearch } from '../youtube-api'
+import axios from 'axios'
 import {
     StyleSheet,
     View,
@@ -52,11 +53,7 @@ const styles = StyleSheet.create({
  }
 });
 
-const FAKE_BOOK_DATA = [
-    {volumeInfo: {title: 'The Catcher in the Rye', authors: "J. D. Salinger", imageLinks: {thumbnail: 'https://facebook.github.io/react/img/logo_og.png'}}}
-];
 
-const REQUEST_URL = 'https://www.googleapis.com/books/v1/volumes?q=subject:fiction';
 
 class VideoList extends Component {
 
@@ -75,8 +72,7 @@ class VideoList extends Component {
    }
 
    fetchData() {
-       fetch(REQUEST_URL)
-       .then((response) => response.json())
+       youtubeSearch("dog")
        .then((responseData) => {
            this.setState({
                dataSource: this.state.dataSource.cloneWithRows(responseData.items),
@@ -90,31 +86,30 @@ class VideoList extends Component {
        return (
            <View style={styles.loading}>
                <Text>
-                   Loading books...
+                   Loading videos...
                </Text>
            </View>
        );
    }
 
-   showVideoDetail(book) {
+   showVideoDetail(video) {
        this.props.navigator.push({
-           title: book.volumeInfo.title,
+           title: video.snippet.title,
            component: VideoDetail,
-           passProps: {book}
+           passProps: {video}
        });
    }
 
-   renderBook(book) {
+   renderVideo(video) {
        return (
-            <TouchableHighlight onPress={() => this.showVideoDetail(book)}  underlayColor='#dddddd'>
+            <TouchableHighlight onPress={() => this.showVideoDetail(video)}  underlayColor='#dddddd'>
                 <View>
                     <View style={styles.container}>
                         <Image
-                            source={{uri: book.volumeInfo.imageLinks.thumbnail}}
+                            source={{uri: video.snippet.thumbnails.default.url}}
                             style={styles.thumbnail} />
                         <View style={styles.rightContainer}>
-                            <Text style={styles.title}>{book.volumeInfo.title}</Text>
-                            <Text style={styles.author}>{book.volumeInfo.authors}</Text>
+                            <Text style={styles.title}>{video.snippet.title}</Text>
                         </View>
                     </View>
                     <View style={styles.separator} />
@@ -124,14 +119,13 @@ class VideoList extends Component {
    }
 
   render() {
-  	var book = FAKE_BOOK_DATA[0];
     if (this.state.isLoading) {
       return this.renderLoadingView();
     }
     return (
         <ListView
             dataSource={this.state.dataSource}
-            renderRow={this.renderBook.bind(this)}
+            renderRow={this.renderVideo.bind(this)}
             style={styles.listView}
             />
     );
