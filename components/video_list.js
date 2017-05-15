@@ -3,16 +3,16 @@
 import React, { Component } from 'react';
 import youtubeSearch from '../youtube-api'
 import axios from 'axios'
-import Search from 'react-native-search-bar';
+import Search from 'react-native-search-box';
 
 import {
     StyleSheet,
     View,
     Image,
     Text,
+    TextInput,
     ListView,
     TouchableHighlight,
-    ActivityIndicatorIOS
   } from 'react-native';
 
 import VideoDetail from './video_detail';
@@ -46,13 +46,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#dddddd',
   },
   listView: {
-    marginTop: 65,
     backgroundColor: '#F5FCFF',
   },
   loading: {
     alignItems: 'center',
     justifyContent: 'center',
   },
+  searchBar: {
+    paddingTop: 165,
+    backgroundColor: 'green',
+  }
 });
 
 const FAKE_BOOK_DATA = [
@@ -65,6 +68,7 @@ class VideoList extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      query: 'dog',
       isLoading: true,
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2,
@@ -73,13 +77,12 @@ class VideoList extends Component {
   }
 
   componentDidMount() {
-    console.log("here");
     this.fetchData();
   }
 
    fetchData() {
      console.log("about to search");
-       youtubeSearch("dog")
+       youtubeSearch(this.state.query)
        .then((responseData) => {
          this.setState({
            dataSource: this.state.dataSource.cloneWithRows(responseData),
@@ -108,8 +111,6 @@ class VideoList extends Component {
    }
 
    renderVideo(video) {
-     console.log("video is");
-     console.log(video);
        return (
             <TouchableHighlight onPress={() => {this.showVideoDetail(video) }}  underlayColor='#dddddd'>
                 <View>
@@ -132,11 +133,14 @@ class VideoList extends Component {
       return this.renderLoadingView();
     }
     return (
-      <View>
-          <Search
-            ref='searchBar'
-          	placeholder='Search'
-          />
+      <View style={{marginTop: 65}}>
+      <Search
+        onChangeText={(query) => {
+          this.setState({ query });
+          this.fetchData();
+          }
+        }
+      />
           <ListView
               dataSource={this.state.dataSource}
               renderRow={this.renderVideo.bind(this)}
