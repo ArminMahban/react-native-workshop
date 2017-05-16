@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'white',
     padding: 10,
   },
   thumbnail: {
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#dddddd',
   },
   listView: {
-    backgroundColor: 'yellow',
+    backgroundColor: 'white',
   },
 });
 
@@ -122,6 +122,9 @@ class VideoList extends Component {
     return (
       <View style={{ marginBottom: 150 }}>
         <Search
+          backgroundColor="#c4302b"
+          showsCancelButton={false}
+          textFieldBackgroundColor="#c4302b"
           onChangeText={(query) => {
             this.setState({ query });
             this.fetchData();
