@@ -1,8 +1,8 @@
 'use strict';
 
 import React, { Component } from 'react';
-import youtubeSearch from '../youtube-api'
-import axios from 'axios'
+import youtubeSearch from '../youtube-api';
+import axios from 'axios';
 import Search from 'react-native-search-box';
 
 import {
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginBottom: 3,
   },
   subtitle: {
@@ -68,8 +68,8 @@ class VideoList extends Component {
     this.fetchData();
   }
 
-   fetchData() {
-       youtubeSearch(this.state.query)
+  fetchData() {
+    youtubeSearch(this.state.query)
        .then((responseData) => {
          this.setState({
            dataSource: this.state.dataSource.cloneWithRows(responseData),
@@ -79,60 +79,61 @@ class VideoList extends Component {
        .done();
   }
 
-   renderLoadingView() {
-       return (
-           <View style={styles.loading}>
-               <Text>
+  renderLoadingView() {
+    return (
+      <View style={styles.loading}>
+        <Text>
                    Loading videos...
                </Text>
-           </View>
-       );
-   }
+      </View>
+    );
+  }
 
-   showVideoDetail(video) {
-       this.props.navigator.push({
-           title: video.snippet.title,
-           component: VideoDetail,
-           passProps: {video}
-       });
-   }
+  showVideoDetail(video) {
+    this.props.navigator.push({
+      title: video.snippet.title,
+      component: VideoDetail,
+      passProps: { video },
+    });
+  }
 
-   renderVideo(video) {
-       return (
-            <TouchableHighlight onPress={() => {this.showVideoDetail(video) }}  underlayColor='#dddddd'>
-                <View>
-                    <View style={styles.container}>
-                        <Image
-                            source={{uri: video.snippet.thumbnails.default.url}}
-                            style={styles.thumbnail} />
-                        <View style={styles.rightContainer}>
-                            <Text style={styles.title}>{video.snippet.title}</Text>
-                            <Text style={styles.subtitle}>{video.snippet.description}</Text>
-                        </View>
-                    </View>
-                    <View style={styles.separator} />
-                </View>
-            </TouchableHighlight>
-       );
-   }
+  renderVideo(video) {
+    return (
+      <TouchableHighlight onPress={() => { this.showVideoDetail(video); }} underlayColor="#dddddd">
+        <View>
+          <View style={styles.container}>
+            <Image
+              source={{ uri: video.snippet.thumbnails.default.url }}
+              style={styles.thumbnail}
+            />
+            <View style={styles.rightContainer}>
+              <Text style={styles.title}>{video.snippet.title}</Text>
+              <Text style={styles.subtitle}>{video.snippet.description}</Text>
+            </View>
+          </View>
+          <View style={styles.separator} />
+        </View>
+      </TouchableHighlight>
+    );
+  }
 
   render() {
     if (this.state.isLoading) {
       return this.renderLoadingView();
     }
     return (
-      <View style={{marginBottom: 150}}>
+      <View style={{ marginBottom: 150 }}>
         <Search
           onChangeText={(query) => {
             this.setState({ query });
             this.fetchData();
-            }
+          }
           }
         />
         <ListView
-            dataSource={this.state.dataSource}
-            renderRow={this.renderVideo.bind(this)}
-            style={styles.listView}
+          dataSource={this.state.dataSource}
+          renderRow={this.renderVideo.bind(this)}
+          style={styles.listView}
         />
       </View>
     );

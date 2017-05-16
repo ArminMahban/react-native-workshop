@@ -1,17 +1,16 @@
 import React from 'react';
 import {
   View,
-  Image
+  Image,
 } from 'react-native';
 
 
 const SearchView = (props) => {
-
   return (
     <View>
       <Image
-        style={{width: 400, height: 300}}
-        source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
+        style={{ width: 400, height: 300 }}
+        source={{ uri: 'https://facebook.github.io/react/img/logo_og.png' }}
       />
     </View>
   );
