@@ -1,21 +1,18 @@
 'use strict';
 
-import React, { Component } from 'react';
-import youtubeSearch from '../youtube-api';
-import axios from 'axios';
 import Search from 'react-native-search-box';
-
 import {
     StyleSheet,
     View,
     Image,
     Text,
-    TextInput,
     ListView,
     TouchableHighlight,
   } from 'react-native';
-
+import React, { Component } from 'react';
+import youtubeSearch from '../youtube-api';
 import VideoDetail from './video_detail';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -79,22 +76,23 @@ class VideoList extends Component {
        .done();
   }
 
-  renderLoadingView() {
-    return (
-      <View style={styles.loading}>
-        <Text>
-                   Loading videos...
-               </Text>
-      </View>
-    );
-  }
-
   showVideoDetail(video) {
     this.props.navigator.push({
       title: video.snippet.title,
       component: VideoDetail,
       passProps: { video },
     });
+  }
+
+  renderLoadingView() {
+    console.log(this.state);
+    return (
+      <View style={styles.loading}>
+        <Text>
+            Loading videos...
+        </Text>
+      </View>
+    );
   }
 
   renderVideo(video) {
@@ -132,7 +130,7 @@ class VideoList extends Component {
         />
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={this.renderVideo.bind(this)}
+          renderRow={() => this.renderVideo}
           style={styles.listView}
         />
       </View>

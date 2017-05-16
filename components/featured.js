@@ -1,14 +1,12 @@
 'use strict';
 
-import React, { Component } from 'react';
-import VideoList from './video_list';
-
 import {
     StyleSheet,
     NavigatorIOS,
-    View,
-    Text,
   } from 'react-native';
+import React, { Component } from 'react';
+import VideoList from './video_list';
+
 
 const styles = StyleSheet.create({
   container: {

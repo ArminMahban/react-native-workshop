@@ -11,7 +11,8 @@
     "react-native": "0.44.0",
     "react-native-search-bar": "^3.0.0",
     "react-native-search-box": "0.0.8",
-    "react-native-searchbar": "^1.10.0"
+    "react-native-searchbar": "^1.10.0",
+    "react-native-youtube": "^1.0.0-alpha.3"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

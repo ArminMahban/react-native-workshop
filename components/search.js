@@ -1,15 +1,13 @@
 'use strict';
 
-import React, { Component } from 'react';
-import SearchView from './searchView';
-
 import {
     StyleSheet,
-    View,
     NavigatorIOS,
-    Text,
-    Image,
   } from 'react-native';
+
+import React from 'react';
+import SearchView from './searchView';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -18,7 +16,6 @@ const styles = StyleSheet.create({
 });
 
 const Search = (props) => {
-
   return (
     <NavigatorIOS
       style={styles.container}
