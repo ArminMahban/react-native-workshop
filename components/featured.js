@@ -22,6 +22,9 @@ class Featured extends Component {
       <NavigatorIOS
         style={styles.container}
         translucent={false}
+        barTintColor='#c4302b'
+        titleTextColor='white'
+        tintColor='white'
         initialRoute={{
           title: 'Featured Videos',
           component: VideoList,

@@ -4,7 +4,6 @@
  * @flow
  */
 
-
 import React, { Component } from 'react';
 import Featured from './components/featured';
 import Search from './components/search';
@@ -27,6 +26,8 @@ class VidSearch extends Component {
         return (
             <TabBarIOS selectedTab={this.state.selectedTab}
             translucent={false}
+            unselectedItemTintColor='#9E9E9E'
+            tintColor='#c4302b'
             >
                 <TabBarIOS.Item
                     selected={this.state.selectedTab === 'featured'}

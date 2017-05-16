@@ -22,6 +22,9 @@ const Search = (props) => {
   return (
     <NavigatorIOS
       style={styles.container}
+      translucent={false}
+      barTintColor='#c4302b'
+      titleTextColor='white'
       initialRoute={{
         title: 'Search Videos',
         component: SearchView,
@@ -32,3 +35,6 @@ const Search = (props) => {
 
 
 module.exports = Search;
+
+/* Rectangle 5 Copy: */
+// background-image: linear-gradient(-221deg, #C249FA 0%, #625AD9 100%);

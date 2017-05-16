@@ -29,19 +29,17 @@ const styles = StyleSheet.create({
 
 class VideoDetail extends Component {
   render() {
-    console.log("video");
-    console.log(this.props.video);
     const video = this.props.video;
     const description = video.snippet.description || '';
     const vidId = video.id.videoId;
     return (
       <WebView
-                    style={styles.frame}
-                    source={{uri: `https://www.youtube.com/watch?v=${vidId}`}}
-                    renderLoading={this.renderLoading}
-                    renderError={this.renderError}
-                    automaticallyAdjustContentInsets={false}
-                />
+          style={styles.frame}
+          source={{uri: `https://www.youtube.com/watch?v=${vidId}`}}
+          renderLoading={this.renderLoading}
+          renderError={this.renderError}
+          automaticallyAdjustContentInsets={false}
+      />
     );
   }
 }
