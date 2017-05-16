@@ -9,6 +9,7 @@ import {
     NavigatorIOS,
     Text,
     Image,
+    StatusBar,
   } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -20,6 +21,11 @@ const styles = StyleSheet.create({
 const Search = (props) => {
 
   return (
+    <View style={styles.container}>
+    <StatusBar
+     backgroundColor="blue"
+     barStyle="light-content"
+   />
     <NavigatorIOS
       style={styles.container}
       translucent={false}
@@ -30,6 +36,7 @@ const Search = (props) => {
         component: SearchView,
       }}
     />
+    </View>
   );
 };
 

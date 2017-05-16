@@ -8,6 +8,7 @@ import {
     NavigatorIOS,
     View,
     Text,
+    StatusBar,
   } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -19,6 +20,11 @@ const styles = StyleSheet.create({
 class Featured extends Component {
   render() {
     return (
+      <View style={styles.container}>
+      <StatusBar
+       backgroundColor="blue"
+       barStyle="light-content"
+     />
       <NavigatorIOS
         style={styles.container}
         translucent={false}
@@ -30,6 +36,7 @@ class Featured extends Component {
           component: VideoList,
         }}
       />
+      </View>
     );
   }
   }
